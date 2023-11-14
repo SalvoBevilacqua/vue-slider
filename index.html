@@ -21,20 +21,22 @@
                     <div class="white">
                         <h3>{{ movie[activeIndex].title }}</h3>
                         <p>{{ movie[activeIndex].text }}</p>
-                    </div>                
+                    </div>
                 </div>
             </div>
 
-            
+
             <div class="thumbnails">
-                <img v-for="(img, index) in movie" :src="img.image" alt="test" :class="index === activeIndex ? 'active' : ''">
+                <img v-for="(img, index) in movie" :src="img.image" alt="test"
+                    :class="index === activeIndex ? 'active' : ''">
 
                 <div class="prev" @click="showPrev"></div>
                 <div class="next" @click="showNext"></div>
             </div>
         </div>
     </div>
-    
+
     <script src="js/script.js"></script>
 </body>
+
 </html>
