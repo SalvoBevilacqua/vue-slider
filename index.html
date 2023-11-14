@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carosello</title>
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="items">
+                <div class="item">
+                    <img :src="movie[activeIndex].image" alt="test">
+                    <div class="white">
+                        <h3>{{ movie[activeIndex].title }}</h3>
+                        <p>{{ movie[activeIndex].text }}</p>
+                    </div>                
+                </div>
+            </div>
+
+            
+            <div class="thumbnails">
+                <img v-for="(img, index) in movie" :src="img.image" alt="test" :class="index === activeIndex ? 'active' : ''">
+
+                <div class="prev" @click="showPrev"></div>
+                <div class="next" @click="showNext"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
