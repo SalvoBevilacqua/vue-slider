@@ -14,8 +14,8 @@
 
 <body>
     <div id="app">
-        <div class="container">
-            <div class="items">
+        <div class="container" @keyup.up="showPrev" @keyup.down="showNext">
+            <div class="items" @mouseover="stopAutoplay" @mouseleave="restartAutoplay">
                 <div class="item">
                     <img :src="movie[activeIndex].image" alt="test">
                     <div class="white">
@@ -28,7 +28,7 @@
 
             <div class="thumbnails">
                 <img v-for="(img, index) in movie" :src="img.image" alt="test"
-                    :class="index === activeIndex ? 'active' : ''">
+                    :class="index === activeIndex ? 'active' : ''" @click="showSlide(index)">
 
                 <div class="prev" @click="showPrev"></div>
                 <div class="next" @click="showNext"></div>

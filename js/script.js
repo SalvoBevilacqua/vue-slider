@@ -27,10 +27,11 @@ createApp({
                 },
             ],
             activeIndex: 0,
+            timer: null
         }
     },
     created() {
-        console.log("ciaone");
+        this.timer = setInterval(this.showNext, 2000);
     },
     methods: {
         showNext: function () {
@@ -46,6 +47,17 @@ createApp({
             } else {
                 this.activeIndex--;
             }
+
+        },
+        showSlide: function (clickedIndex) {
+            this.activeIndex = clickedIndex;
+        },
+        stopAutoplay: function () {
+            clearInterval(this.timer);
+            this.timer = null;
+        },
+        restartAutoplay: function() {
+            this.timer = setInterval(this.showNext, 2000);
         }
     }
 }).mount("#app");
