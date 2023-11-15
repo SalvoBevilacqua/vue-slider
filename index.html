@@ -25,7 +25,6 @@
                 </div>
             </div>
 
-
             <div class="thumbnails">
                 <img v-for="(img, index) in movie" :src="img.image" alt="test"
                     :class="index === activeIndex ? 'active' : ''" @click="showSlide(index)">

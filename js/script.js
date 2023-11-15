@@ -47,7 +47,6 @@ createApp({
             } else {
                 this.activeIndex--;
             }
-
         },
         showSlide: function (clickedIndex) {
             this.activeIndex = clickedIndex;
